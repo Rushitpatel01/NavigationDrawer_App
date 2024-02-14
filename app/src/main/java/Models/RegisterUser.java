@@ -1,4 +1,4 @@
-package com.example.navigationdrawerapp;
+package Models;
 
 public class RegisterUser
 {

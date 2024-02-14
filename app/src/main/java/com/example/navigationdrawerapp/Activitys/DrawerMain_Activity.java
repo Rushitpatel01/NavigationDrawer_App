@@ -1,4 +1,6 @@
-package com.example.navigationdrawerapp;
+package com.example.navigationdrawerapp.Activitys;
+
+import static com.example.navigationdrawerapp.Activitys.MainActivity.editor;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -15,12 +17,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.navigationdrawerapp.R;
 import com.example.navigationdrawerapp.ui.AddproductFragment;
 import com.example.navigationdrawerapp.ui.View_Fragment;
 import com.example.navigationdrawerapp.ui.Show_Fragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class DrawerMain_Activity extends AppCompatActivity {
+
 
     NavigationView navigationView;
     Toolbar toolbar;
@@ -35,6 +39,7 @@ public class DrawerMain_Activity extends AppCompatActivity {
         drawerLayout=findViewById(R.id.myDrawer);
 //        getSupportActionBar().show();
         setSupportActionBar(toolbar);
+
 
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(DrawerMain_Activity.this,drawerLayout,toolbar,R.string.OpenDrawer,R.string.CloseDrawer);
         drawerLayout.addDrawerListener(toggle);
@@ -54,6 +59,8 @@ public class DrawerMain_Activity extends AppCompatActivity {
                 if (item.getItemId() == R.id.menu_logout) {
                     Intent intent = new Intent(DrawerMain_Activity.this, LoginActivity.class);
 
+                    editor.putBoolean("Login",false);
+                    editor.commit();
                     startActivity(intent);
                     finish();
                 }

@@ -1,4 +1,4 @@
-package com.example.navigationdrawerapp;
+package com.example.navigationdrawerapp.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import Models.Instance_Class;
+import com.example.navigationdrawerapp.R;
+import Models.RegisterUser;
 
 import retrofit2.Call;
 import retrofit2.Callback;

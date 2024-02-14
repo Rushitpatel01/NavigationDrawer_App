@@ -1,17 +1,24 @@
-package com.example.navigationdrawerapp;
+package com.example.navigationdrawerapp.Activitys;
 
-import static com.example.navigationdrawerapp.MainActivity.editor;
+
+import static com.example.navigationdrawerapp.Activitys.MainActivity.editor;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import Models.Instance_Class;
+import Models.LoginData;
+import com.example.navigationdrawerapp.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,16 +58,19 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<LoginData> call, Response<LoginData> response) {
                         if(response.body().getConnection()==1){
+                            Log.d("EEE", "onResponse: Response="+response.body().getResult());
                             if(response.body().getResult()==1){
                                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
-                                editor.putBoolean("Login",false);
+                                editor.putBoolean("Login",true);
+
+
                                 editor.putString("id",response.body().getUserdata().getId());
                                 editor.putString("name",response.body().getUserdata().getName());
                                 editor.putString("email",response.body().getUserdata().getEmail());
                                 editor.putString("password",response.body().getUserdata().getPassword());
                                 editor.commit();
-                                 Intent intent = new Intent(LoginActivity.this,DrawerMain_Activity.class);
+                                 Intent intent = new Intent(LoginActivity.this, DrawerMain_Activity.class);
                                  startActivity(intent);
                             }else {
                                 Toast.makeText(LoginActivity.this, "Can't Login", Toast.LENGTH_SHORT).show();

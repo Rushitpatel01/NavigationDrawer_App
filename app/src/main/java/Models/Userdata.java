@@ -1,5 +1,5 @@
 
-package com.example.navigationdrawerapp;
+package Models;
 
 
 import com.google.gson.annotations.Expose;

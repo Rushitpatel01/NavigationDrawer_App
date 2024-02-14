@@ -4,19 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text=""
-        android:gravity="center"
-        android:textSize="50sp"/>
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listview2"
-        tools:listitem="@layout/list_item2"/>
+        android:id="@+id/view_product_recycler"/>
 
 
 

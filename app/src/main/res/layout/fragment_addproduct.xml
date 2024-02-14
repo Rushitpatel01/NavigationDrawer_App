@@ -4,19 +4,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_marginHorizontal="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text=""
-        android:textSize="50sp"
-        android:gravity="center"/>
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+       >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycleview"
-        tools:listitem="@layout/recycle_item"
-        />
+        <EditText
+            android:id="@+id/pname"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Name"
+            android:textSize="20dp" />
+        <EditText
+            android:id="@+id/pdes"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Description"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/pprize"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Price"
+            android:textSize="20dp" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_marginTop="70sp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_1"
+            />
+        <Button
+
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add product"
+            android:backgroundTint="#26AFED"
+            android:layout_marginTop="100dp"
+            android:textSize="30dp"
+            android:id="@+id/btnAdd"/>
+    </LinearLayout>
 
 </FrameLayout>
