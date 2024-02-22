@@ -72,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<RegisterUser> call, Throwable t) {
                         Log.e("MMM", "onFailure:"+t.getLocalizedMessage());
+                        //fgfgfgfgffg
                     }
                 });
 
